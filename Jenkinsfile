@@ -1,4 +1,4 @@
-node('master') {
+    node('master') {
     stage('Preparation') {
         echo "Preparation stage begins."
         git branch: 'kskorin', url: 'https://github.com/konstantinskorin/mntlab-pipeline.git'
