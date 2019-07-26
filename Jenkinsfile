@@ -27,8 +27,7 @@ node('master') {
     stage('Packaging and Publishing') {
         echo "Packaging and Publishing stage begins."
         sh 'tar xvf kskorin_dsl_script.tar.gz'
-        sh 'cp build/libs/mntlab-ci-pipeline.jar gradle-simple.jar'
-        sh 'tar -czvf pipeline-kskorin-${BUILD_NUMBER}.tar.gz jobs.groovy Jenkinsfile gradle-simple.jar'
+        sh 'tar -czvf pipeline-kskorin-${BUILD_NUMBER}.tar.gz jobs.groovy Jenkinsfile -C build/libs/ gradle-simple.jar'
         archiveArtifacts 'pipeline-kskorin-${BUILD_NUMBER}.tar.gz'
     }
     stage('Asking for manual approval') {
