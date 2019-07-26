@@ -12,9 +12,9 @@ node('master') {
     stage('Testing code'){
         echo "Testing stage begins."
         parallel (
-                Unit_tests: {echo "Unit Test  stage begins."; sh 'gradle test' },
-                Jacoco_tests: {echo "Jacoco Test stage begins."; sh 'gradle jacocoTestReport' },
-                Cucumber_tests: {echo "Cucumber Test stage begins."; sh 'gradle cucumber' }
+                Unit_tests: {echo "Unit Test  stage begins."; sh '/opt/gradle/bin/gradle test' },
+                Jacoco_tests: {echo "Jacoco Test stage begins."; sh '/opt/gradle/bin/gradle jacocoTestReport' },
+                Cucumber_tests: {echo "Cucumber Test stage begins."; sh '/opt/gradle/bin/gradle cucumber' }
         )
     }
     stage('Triggeringg job and fetching artefact after finishing'){
