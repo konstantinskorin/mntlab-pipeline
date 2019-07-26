@@ -19,7 +19,7 @@ node('master') {
     }
     stage('Triggeringg job and fetching artefact after finishing'){
         echo "Trigger stage begins."
-        build job: "MNTLAB-kskorin-child-1-build-job", parameters: [string(name: 'BRANCH_NAME', value: 'kskorin' )]
+        build job: "MNTLAB-kskorin-child1-build-job", parameters: [string(name: 'BRANCH_NAME', value: 'kskorin' )]
         step ([$class: 'CopyArtifact',
         projectName: "MNTLAB-kskorin-child-1-build-job",
         filter: 'kskorin_dsl_script.tar.gz']);
