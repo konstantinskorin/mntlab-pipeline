@@ -6,7 +6,7 @@ node('master') {
     
     stage('Building code') {
         echo "Building stage begins."
-        sh 'gradle build'
+        sh '/opt/gradle/bin/gradle build'
     }
 
     stage('Testing code'){
